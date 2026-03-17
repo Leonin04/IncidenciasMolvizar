@@ -8,8 +8,8 @@ body{
     min-height: 100vh;
 
     display: grid;
-    grid-template-columns: 8% 92%;
-    grid-template-rows: 10% 83% 7%;
+    grid-template-columns: 8vw 92vw;
+    grid-template-rows: 10vh 83vh 7vh;
 }
 
 header{
@@ -57,6 +57,7 @@ header{
     text-align: center ;
     grid-template-columns: 24.25% 24.25% 24.25% 24.25%;
     gap:1%;
+    overflow-y: auto;
 }
 
 article{
