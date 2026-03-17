@@ -26,7 +26,7 @@ header{
 
 }
 
-.logo {
+.logo{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,7 +36,7 @@ header{
 
 .logo img {
     max-width: 100%;       
-    max-height: 80%;       
+    max-height: 80%;  
     object-fit: contain;   
 }
 
@@ -44,7 +44,7 @@ header{
     list-style-type: none;
 }
 
-.contenido{
+.contenido_noticia{
     margin-inline: 1%;
     margin-block: 1%;
 
@@ -55,62 +55,77 @@ header{
 
     display:grid;
     text-align: center ;
+    grid-template-columns:60% 10% 10% 10% 10%;
+    padding: 10px;
+}
+
+.titulo_noticia{
+    grid-row-start: 1;
+    grid-column-start: 1;
+    border-bottom: 1px solid #555;
+}
+
+.tiktok{
+    grid-row-start: 1;
+    grid-column-start: 2;
+    border-bottom: 1px solid #555;
+}
+
+.instagram{
+    grid-row-start: 1;
+    grid-column-start: 3;
+    border-bottom: 1px solid #555;
+
+}
+
+.x{
+    grid-row-start: 1;
+    grid-column-start: 4;
+    border-bottom: 1px solid #555;
+}
+
+.imprimir{
+    grid-row-start: 1;
+    grid-column-start: 5;
+    border-bottom: 1px solid #555;
+}
+
+.datos_noticia{
+    padding: 10px;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    font-size: 0.9em;
+    color: #555;
+
+    border-bottom: 1px solid #a2a1a1;
+
+}
+
+.cuerpo_noticia{
+    padding: 20px;
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-column-end: 6;
+
+    display: grid;
     grid-template-columns: 24.25% 24.25% 24.25% 24.25%;
-    gap:1%;
+    gap: 1%;
 }
 
-article{
-    background-color: #ffffff; 
-    border: 2px solid #ddd;    
-    border-radius: 10px;      
-    text-align: center;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2px;
+.cuerpo_noticia p{
+    grid-column-start: 1;
+    grid-column-end: 5;
     
+    margin-top: 20px;
+    text-align: justify;
 }
 
-.titulo{
-    width: 100%;
-    height: 15%;
-    background-color: #ffffff; 
-    border: 1px solid #ddd;    
-    border-radius: 8px;  
-
-    display: flex;    
-    align-items: center;
-    justify-content: center;
+.cuerpo_noticia img{
+    margin-top: 20px;
+    max-width: 100%;
 }
 
-.incidencia.titulo{
-    background-color: #ffbaba;
-}
-
-.noticia.titulo{
-    background-color: #c2e0fa;
-}
-
-article img{
-    max-width: 100%;       
-    max-height: 95%; 
-    object-fit: cover;   
-    flex-grow: 1;
-    
-}
-
-.boton_leer{
-    margin-top: 5px;
-    margin-bottom: 10px;
-    padding: 5px 10px;
-    background-color: #86C754;
-    color: rgb(0, 0, 0);
-    font-size: large;
-    text-decoration: none;
-    border-radius: 5px;
-}
 aside{
     grid-column-start: 1;
 
