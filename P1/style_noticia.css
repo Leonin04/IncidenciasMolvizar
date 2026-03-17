@@ -8,7 +8,7 @@ body{
 
     display: grid;
     grid-template-columns: 8vw 92vw;
-    grid-template-rows: 10vh 83vh 7vh;
+    grid-template-rows: 10vh 84vh 6vh;
 }
 
 header{
@@ -71,6 +71,12 @@ header{
     border-bottom: 1px solid #555;
 }
 
+.tiktok img{
+    max-width: 44%;
+    max-height: 44%;
+    object-fit: contain;
+}
+
 .instagram{
     grid-row-start: 1;
     grid-column-start: 3;
@@ -78,16 +84,34 @@ header{
 
 }
 
-.x{
+.instagram img{
+    max-width: 45%;
+    max-height: 45%;
+    object-fit: contain;
+}
+
+.twitter{
     grid-row-start: 1;
     grid-column-start: 4;
     border-bottom: 1px solid #555;
+}
+
+.twitter img{
+    max-width: 45%;
+    max-height: 45%;
+    object-fit: contain;
 }
 
 .imprimir{
     grid-row-start: 1;
     grid-column-start: 5;
     border-bottom: 1px solid #555;
+}
+
+.imprimir img{
+    max-width: 45%;
+    max-height: 45%;
+    object-fit: contain;
 }
 
 .datos_noticia{
@@ -159,19 +183,22 @@ footer{
 }
 
 .arriba_footer{
-    margin-top: 10px;
+    margin-top: 5px;
     display: grid;
     grid-template-columns: 25% 50% 25%;
     text-align: center;
 }
 
 .copyright{
-    margin-top: 5px;
+    margin: 5px;
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 2;
     grid-row-end: 2;
     text-align: center;
+
 }
 
-
+.copyright p{
+    font-size: small;
+}
