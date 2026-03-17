@@ -54,63 +54,71 @@ header{
 
     display:grid;
     text-align: center ;
-    grid-template-columns:60% 10% 10% 10% 10%;
+    grid-template-columns:100%;
     padding: 10px;
     overflow-y: auto;
+}
+
+.cabecera_noticia{
+    display: grid;
+    grid-template-columns: 55% 10% 10% 10% 10%;
+    justify-content: center;
+    align-items: center;
+    gap: 1%;
+    border: 1.5px solid #86C754;
 }
 
 .titulo_noticia{
     grid-row-start: 1;
     grid-column-start: 1;
-    border-bottom: 1px solid #555;
 }
 
 .tiktok{
+    padding:5px;
     grid-row-start: 1;
     grid-column-start: 2;
-    border-bottom: 1px solid #555;
 }
 
 .tiktok img{
-    max-width: 44%;
-    max-height: 44%;
+    max-width: 30%;
+    max-height: 30%;
     object-fit: contain;
 }
 
 .instagram{
+    padding:5px;
     grid-row-start: 1;
     grid-column-start: 3;
-    border-bottom: 1px solid #555;
 
 }
 
 .instagram img{
-    max-width: 45%;
-    max-height: 45%;
+    max-width: 30%;
+    max-height: 30%;
     object-fit: contain;
 }
 
 .twitter{
+    padding:5px;
     grid-row-start: 1;
     grid-column-start: 4;
-    border-bottom: 1px solid #555;
 }
 
 .twitter img{
-    max-width: 45%;
-    max-height: 45%;
+    max-width: 30%;
+    max-height: 30%;
     object-fit: contain;
 }
 
 .imprimir{
+    padding:5px;
     grid-row-start: 1;
     grid-column-start: 5;
-    border-bottom: 1px solid #555;
 }
 
 .imprimir img{
-    max-width: 45%;
-    max-height: 45%;
+    max-width: 30%;
+    max-height: 30%;
     object-fit: contain;
 }
 
@@ -122,7 +130,7 @@ header{
     font-size: 0.9em;
     color: #555;
 
-    border-bottom: 1px solid #a2a1a1;
+    border: 1px solid #86C754;
 
 }
 
@@ -131,6 +139,9 @@ header{
     grid-row-start: 3;
     grid-column-start: 1;
     grid-column-end: 6;
+
+    border: 1px solid #86C754;
+
 
     display: grid;
     grid-template-columns: 24.25% 24.25% 24.25% 24.25%;
