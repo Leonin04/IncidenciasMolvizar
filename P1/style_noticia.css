@@ -25,6 +25,15 @@ header{
     width: 100%;
 }
 
+a{
+    text-decoration: none;
+    color: rgb(246, 244, 244);
+}
+
+a:hover {
+    color: black;
+}
+
 .logo{
     justify-self: start;
     height: 60px;
