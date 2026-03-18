@@ -71,7 +71,7 @@ article {
 
 .titulo {
     width: 100%;
-    height: 15%;
+    min-height: 50px;
     border: 1px solid #ddd;    
     border-radius: 8px;  
     display: flex;    
@@ -124,6 +124,8 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    padding:5px;
 }
 
 .arriba_footer {
