@@ -22,10 +22,11 @@ header{
 
     display: grid;
     align-items: center;
-    grid-template-columns: 25% 50% 25%;
-    grid-template-rows: 100%;
-
+    justify-items: center;
+    grid-template-columns: auto 1fr auto;
+    padding: 0 50px;
 }
+
 .title{
     grid-column: 1 / 3;
     grid-row: 1/2;
