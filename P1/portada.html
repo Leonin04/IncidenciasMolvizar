@@ -1,88 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="icon" href="imgs/logo.png">
-        <title>Incidencias ayuntamiento de Molvízar</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./style.css">
-    </head>
 
-    
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="imgs/logo.png"> <!-- Para que salga iconito en la pestaña del navegador -->
+    <title>Incidencias ayuntamiento de Molvízar</title> <!-- Para que salga el titulo en la pestaña del navegador -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Para que sea webresponsive -->
+    <link rel="stylesheet" href="./style.css">
+</head>
 
-    <body>
-        <header>
-            <a class="logo" href="portada.html">
-                <img src="imgs/logo.png" alt="Logo del Ayuntamiento de Molvízar">
-            </a>
-            <div class="title">
-                <h1>Incidencias ayuntamiento de Molvízar</h1>
+
+
+<body> <!-- Todo el cuerpo de la pagina -->
+    <header> <!-- Cabecera que incluye el logo, el titulo y los 3 enlaces -->
+        <a class="logo" href="portada.html">
+            <!-- Necesito que sea un enlace para que al hacer click me lleve a la pagina de inicio -->
+            <img src="imgs/logo.png" alt="Logo del Ayuntamiento de Molvízar">
+        </a>
+        <div class="title">
+            <h1>Incidencias ayuntamiento de Molvízar</h1>
+        </div>
+        <nav>
+            <ol class="enlaces">
+                <li><a href="#">E1</a></li>
+                <li><a href="#">E2</a></li>
+                <li><a href="#">E3</a></li>
+            </ol>
+        </nav>
+    </header>
+
+
+    <aside> <!-- Barra lateral con 3 botones de accion -->
+        <button class="accion" href="#"> Boton 1 </button>
+        <button class="accion" href="#"> Boton 2 </button>
+        <button class="accion" href="#"> Boton 3 </button>
+    </aside>
+
+    <div class="contenido"> <!-- Distintas noticias -->
+        <article class="noticia">
+            <h2 class="titulo noticia">Noticia 1</h2>
+            <img src="imgs/articulos/noticia.jpg" alt="Imagen del artículo 1">
+            <a class="boton_leer" href="noticia.html"> Leer más </a> <!-- Boton que me llevara a noticia.html -->
+        </article>
+
+        <article class="noticia">
+            <h2 class="titulo noticia">Noticia 1</h2>
+            <img src="imgs/articulos/noticia.jpg" alt="Imagen del artículo 3">
+            <a class="boton_leer" href="noticia.html"> Leer más </a>
+        </article>
+
+        <article class="noticia">
+            <h2 class="titulo noticia">Noticia 1</h2>
+            <img src="imgs/articulos/noticia.jpg" alt="Imagen del artículo 4">
+            <a class="boton_leer" href="noticia.html"> Leer más </a>
+        </article>
+
+        <article class="noticia">
+            <h2 class="titulo noticia">Noticia 1</h2>
+            <img src="imgs/articulos/noticia.jpg" alt="Imagen del artículo 4">
+            <a class="boton_leer" href="noticia.html"> Leer más </a>
+        </article>
+
+        <article class="noticia">
+            <h2 class="titulo noticia">Noticia 1</h2>
+            <img src="imgs/articulos/noticia.jpg" alt="Imagen del artículo 4">
+            <a class="boton_leer" href="noticia.html"> Leer más </a>
+        </article>
+
+    </div>
+
+    <footer> <!-- Pie de pagina -->
+        <div class="arriba_footer"> <!-- Enlaces de contacto -->
+            <div>
+                <a href="mailto:davidbacas@correo.ugr.es"> Email de contacto </a>
             </div>
-            <nav >
-                <ol class="enlaces">
-                    <li><a href="#">E1</a></li>
-                    <li><a href="#">E2</a></li>
-                    <li><a href="#">E3</a></li>
-                </ol>
-            </nav>
-        </header>
-
-        <aside>
-            <button class="accion" href="#"> Boton 1 </button>
-            <button class="accion" href="#"> Boton 2 </button>
-            <button class="accion" href="#"> Boton 3 </button>
-        </aside>
-
-        <div class="contenido">
-            <article class="noticia">
-                <h2 class="titulo noticia">Noticia 1</h2>
-                <img src="imgs/articulos/noticia.jpg" alt="Imagen del artículo 1">
-                <a class="boton_leer" href="noticia.html"> Leer más </a>
-            </article>
-                
-            <article class="noticia">
-                <h2 class="titulo noticia">Noticia 1</h2>
-                <img src="imgs/articulos/noticia.jpg" alt="Imagen del artículo 3">
-                <a class="boton_leer" href="noticia.html"> Leer más </a>
-            </article>
-
-            <article class="noticia">
-                <h2 class="titulo noticia">Noticia 1</h2>
-                <img src="imgs/articulos/noticia.jpg" alt="Imagen del artículo 4">
-                <a class="boton_leer" href="noticia.html"> Leer más </a>
-            </article>
-
-            <article class="noticia">
-                <h2 class="titulo noticia">Noticia 1</h2>
-                <img src="imgs/articulos/noticia.jpg" alt="Imagen del artículo 4">
-                <a class="boton_leer" href="noticia.html"> Leer más </a>
-            </article>
-
-            <article class="noticia">
-                <h2 class="titulo noticia">Noticia 1</h2>
-                <img src="imgs/articulos/noticia.jpg" alt="Imagen del artículo 4">
-                <a class="boton_leer" href="noticia.html"> Leer más </a>
-            </article>
-            
+            <div>
+                <a href="https://molvizar.es/"> Sitio web oficial del ayuntamiento </a>
+            </div>
+            <div>
+                <a href="#"> Aviso legal </a>
+            </div>
         </div>
 
-        <footer>   
-            <div class="arriba_footer">
-                <div>
-                    <a href="mailto:davidbacas@correo.ugr.es"> Email de contacto </a>
-                </div> 
-                <div>
-                    <a href="https://molvizar.es/"> Sitio web oficial del ayuntamiento </a>
-                </div>
-                <div>
-                    <a href="#"> Aviso legal </a>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>Copyright © 2026 David Bacas. Todos los derechos reservados.</p>
-            </div>
-        </footer>
-    </body>
+        <div class="copyright"> <!-- Copyright -->
+            <p>Copyright © 2026 David Bacas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
 
-    
 </html>
