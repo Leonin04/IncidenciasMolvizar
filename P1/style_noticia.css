@@ -38,7 +38,7 @@ a:hover {
     justify-self: start;
     height: 60px;
     display: flex;
-    align-items: center;     /
+    align-items: center;
 }
 
 .logo img {
@@ -54,16 +54,14 @@ a:hover {
     margin-inline: 1%;
     margin-block: 1%;
 
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-column: 2;
+    grid-row: 2;
 
-    display:grid;
-    text-align: center ;
-    grid-template-columns:100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    text-align: center; 
+    gap: 0;
     padding: 10px;
-    overflow-y: auto;
 }
 
 .cabecera_noticia{
@@ -80,16 +78,33 @@ a:hover {
     grid-column-start: 1;
 }
 
+.redes{
+    position: sticky;
+    top: 20px;          
+    grid-column: 2;     
+    grid-row: 1;   
+    align-self: start;  
+    
+    backdrop-filter: blur(7px); 
+    
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center;
+
+    border: 1.5px solid #86C754;
+}
+
+.redes img{
+    max-width: 40%;
+    max-height: 40%;
+    object-fit: contain;
+}
+
 .tiktok{
     padding:5px;
     grid-row-start: 1;
     grid-column-start: 2;
-}
-
-.tiktok img{
-    max-width: 30%;
-    max-height: 30%;
-    object-fit: contain;
 }
 
 .instagram{
@@ -99,34 +114,16 @@ a:hover {
 
 }
 
-.instagram img{
-    max-width: 30%;
-    max-height: 30%;
-    object-fit: contain;
-}
-
 .twitter{
     padding:5px;
     grid-row-start: 1;
     grid-column-start: 4;
 }
 
-.twitter img{
-    max-width: 30%;
-    max-height: 30%;
-    object-fit: contain;
-}
-
 .imprimir{
     padding:5px;
     grid-row-start: 1;
     grid-column-start: 5;
-}
-
-.imprimir img{
-    max-width: 30%;
-    max-height: 30%;
-    object-fit: contain;
 }
 
 .datos_noticia{
@@ -187,7 +184,6 @@ aside{
     border-radius: 10px;
     text-align: center;
 }
-
 
 footer{
     grid-column-start: 1;
