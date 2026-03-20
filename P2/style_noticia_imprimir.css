@@ -1,0 +1,185 @@
+* {
+    /* Para que css no aplica margenes y padding por defecto */
+    margin: 0;
+    padding: 0;
+    /* filtro blanco y negro */
+    filter: grayscale(100%);
+    /* Ponemos una fuente distinta en todo el documento */
+    font-family: Arial;
+}
+
+body {
+    min-height: 100vh;
+    /* Uso vh para que se ajuste al tamaño de la pantalla */
+    display: grid;
+    /* meto todo en un grid para poder organizar bien la web con su cabecera, menu lateral, contenido y footer */
+    grid-template-rows: auto 1fr auto;
+    /* Uso auto para que la cabecera y el footer usen siempre el hueco exacto que necesiten, dejando el resto para las noticias */
+}
+
+header {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    text-align: center;
+    background-color: #86C754;
+
+    display: grid;
+    /* grid para poner el logo, titulo y enlaces en la misma linea y centrados*/
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: auto 1fr auto;
+    padding: 0 50px;
+}
+
+.title {
+    grid-column: 1 / 3;
+    grid-row: 1/2;
+}
+
+.logo {
+    grid-column-start: 3;
+    display: flex;
+    /* flex para poder centrar el logo */
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    overflow: hidden;
+}
+
+.logo img {
+    max-width: 100%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+.enlaces {
+    /* Quito todos los enlaces de la cabecera */
+    display: none;
+}
+
+.contenido_noticia {
+    margin-inline: 1%;
+    /* Para separar cada tarjeta de noticia */
+    margin-block: 1%;
+
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+    display: grid;
+    text-align: center;
+    grid-template-columns: 100%;
+    padding: 10px;
+}
+
+.cabecera_noticia {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 1%;
+    border: 1.5px solid #86C754;
+}
+
+.redes {
+    /* Quito todos los botones de redes sociales */
+    display: none;
+}
+
+.titulo_noticia {
+    grid-row-start: 1;
+    grid-column-start: 1;
+}
+
+.datos_noticia {
+    padding: 10px;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    font-size: 0.9em;
+    color: #555;
+
+    border: 1px solid #86C754;
+
+}
+
+.cuerpo_noticia {
+    padding: 20px;
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-column-end: 6;
+
+    border: 1px solid #86C754;
+
+    display: grid;
+    /* grid para poner las imagenes en la misma linea y centradas*/
+    grid-template-columns: 24.25% 24.25% 24.25% 24.25%;
+    gap: 1%;
+}
+
+.cuerpo_noticia p {
+    grid-column-start: 1;
+    grid-column-end: 5;
+
+    margin-top: 20px;
+    text-align: justify;
+}
+
+.cuerpo_noticia img {
+    margin-top: 20px;
+    max-width: 100%;
+}
+
+aside {
+    /* Oculto el aside porque no se usa en imprimir */
+    display: none;
+}
+
+.accion {
+    margin-top: 10px;
+    margin-inline: 5px;
+    height: 5%;
+
+    border-radius: 10px;
+}
+
+
+footer {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+
+    background-color: #86C754;
+
+}
+
+/* He dividido el footer en 2 para que salga por un lado los enlaces y debajo el copyright */
+.arriba_footer {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    text-align: center;
+}
+
+.arriba_footer a {
+    font-size: 10px;
+    /* cambiaos la fuente */
+    font-family: Calibri;
+}
+
+.copyright {
+    margin: 1px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    text-align: center;
+
+}
+
+.copyright p {
+    font-size: 8px;
+    font-family: Calibri;
+}
