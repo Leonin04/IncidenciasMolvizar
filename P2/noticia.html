@@ -103,14 +103,33 @@
 
         </div>
 
-        <a class="comentarios"> 
-                <img src="imgs/iconos/comentarios.png" alt="Icono de comentarios">
-        </a>
-
         <div class="caja_comentarios">
-            <h3>Comentarios</h3>
-            <p>Sección de comentarios de ejemplo</p>
+            <a class="boton_comentarios"> 
+                <img src="imgs/iconos/comentarios.png" alt="Icono de comentarios">
+            </a>
+
+            <div class="menu_comentarios">
+                <h3 class="titulo_menu">Comentarios</h3>
+                <button class="añadir_comentario" type="button"> Añadir comentario </button>
+                <button class="cerrar_form"> x </button>
+
+                <form class="form_comentarios">
+                    <label for="Nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="Email">Email:</label>
+                    <input type="text" id="email" name="email" required>
+
+                    <label for="Comentario">Comentario:</label>
+                    <textarea id="comentario" name="comentario" required></textarea>
+
+                    <button type="submit">Enviar</button>
+                </form>
+                <div class="seccion_comentarios">
+                </div>
+            </div>
         </div>
+        
 
         <footer> <!-- Pie de pagina -->
             <div class="arriba_footer"> <!-- Enlaces de contacto -->
