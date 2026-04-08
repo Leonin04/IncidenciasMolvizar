@@ -70,14 +70,13 @@ caja.addEventListener('mouseleave', () => {
 });
 
 addComment.addEventListener('click', () => {
-    formulario.style.display = 'flex';
-    formulario.style.flexDirection = 'column';
-    cerrarForm.style.display = 'block';
+    formulario.classList.add('mostrar');
+    cerrarForm.classList.add('mostrar');
 });
 
 cerrarForm.addEventListener('click', () => {
-    formulario.style.display = 'none';
-    cerrarForm.style.display = 'none';
+    formulario.classList.remove('mostrar');
+    cerrarForm.classList.remove('mostrar');
 });
 
 comentario.addEventListener('input', () => {

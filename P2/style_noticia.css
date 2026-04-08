@@ -238,6 +238,10 @@ a:hover {
     color: #615452;
 }
 
+.cerrar_form.mostrar {
+    display: block;
+}
+
 .form_comentarios {
     display: none;
     padding: 10px;
@@ -245,6 +249,11 @@ a:hover {
     background: #f9f9f9;
     border-radius: 8px;
     gap: 10px; 
+}
+
+.form_comentarios.mostrar {
+    display: flex;
+    flex-direction: column;
 }
 
 .comentario{
