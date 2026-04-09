@@ -162,7 +162,7 @@ a:hover {
     border: #86C754 solid 1.5px;
     border-radius: 50px 0 0 50px;
 
-    transition: right 0.3s ease-out;
+    transition: right 0.3s ease-out; /* Para que el boton se desplace suavemente al abrir la caja de comentarios */
 }
 
 .boton_comentarios img {
@@ -179,7 +179,7 @@ a:hover {
     position:fixed;
     height: 100vh;
     width: 300px;
-    right: -300px;
+    right: -300px; /* Para que el menu de comentarios esté oculto al principio */
     justify-self: end;
     background-color: white;
     border: #86C754 solid 1.5px;
@@ -187,7 +187,7 @@ a:hover {
     grid-column: 3;
     grid-row: 1/3;
 
-    transition: right 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s;
+    transition: right 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s; /* Para que el menu de comentarios se desplace suavemente al abrirse y cerrarse, y para que desaparezca completamente al cerrarse */
 
     display: flex;
     flex-direction: column;
@@ -196,7 +196,7 @@ a:hover {
 }
 
 
-.menu_comentarios.mostrar{
+.menu_comentarios.mostrar{ /* Clase que se añade al menu de comentarios para mostrarlo */
 
     visibility: visible;
 
@@ -220,11 +220,11 @@ a:hover {
     border-radius: 5px;
 }
 
-.añadir_comentario:hover {
+.añadir_comentario:hover { /* Para que el boton de añadir comentario cambie de color al pasar el cursor por encima */
     background-color: #d4f0b8;
 }
 
-.cerrar_form{
+.cerrar_form{ /* Boton para cerrar el menu de comentarios, inicialmente oculto, que se muestra al hacer click en el boton de añadir comentario */
     display: none;
     top: 10px;
     margin-left: 80%;   
@@ -238,7 +238,7 @@ a:hover {
     color: #615452;
 }
 
-.cerrar_form.mostrar {
+.cerrar_form.mostrar { /* Clase que se añade al boton de cerrar comentario para mostrarlo */
     display: block;
 }
 
