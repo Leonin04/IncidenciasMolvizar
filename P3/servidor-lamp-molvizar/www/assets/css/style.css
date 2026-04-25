@@ -1,0 +1,174 @@
+* {
+    /* Para que css no aplica margenes y padding por defecto */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Para que el padding y border no afecten al tamaño del elemento */
+}
+
+body {
+    height: 100vh;
+    /* Uso vh para que se ajuste al tamaño de la pantalla */
+    display: grid;
+    /* meto todo en un grid para poder organizar bien la web con su cabecera, menu lateral, contenido y footer */
+    grid-template-columns: auto 1fr;
+    /* Uso auto para que la barra later use siempre el hueco exacto que necesite, dejando el resto para las noticias */
+    grid-template-rows: auto 1fr auto;
+    /* Uso auto para que la cabecera y el footer usen siempre el hueco exacto que necesiten, dejando el resto para las noticias */
+}
+
+header {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    background-color: #86C754;
+
+    display: grid;
+    /* grid para poner el logo, titulo y enlaces en la misma linea y centrados*/
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding: 10px 40px;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    /* Quita el subrayado de los enlaces */
+    color: rgb(246, 244, 244);
+}
+
+a:hover {
+    /* El hover es para que al pasar el cursor haga algo, concretamente este, cambiar el colo */
+    color: black;
+}
+
+.title {
+    text-align: center;
+}
+
+.logo {
+    height: 60px;
+    display: flex;
+    /* flex para poder centrar el logo */
+    align-items: center;
+}
+
+.logo img {
+    height: 100%;
+    width: auto;
+}
+
+.enlaces {
+    /* QUita lo puntos de las listas */
+    list-style-type: none;
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+.contenido {
+    margin-inline: 1%;
+    /* Para separar cada tarjeta de noticia */
+    margin-block: 1%;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1%;
+}
+
+article {
+    background-color: #ffffff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    /* Para hacer las tarjetas de noticia */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+
+.titulo {
+    width: 100%;
+    min-height: 50px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    /* Para centrar el titulo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.incidencia.titulo {
+    background-color: #ffbaba;
+}
+
+.noticia.titulo {
+    background-color: #c2e0fa;
+}
+
+article img {
+    max-width: 100%;
+    max-height: 95%;
+    /* Para que la imagen no se salga de la tarjeta */
+    object-fit: cover;
+    /* Para que la imagen se ajuste al tamaño de la tarjeta */
+    flex-grow: 1;
+}
+
+.boton_leer {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    background-color: #86C754;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+aside {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    /* flex para poder centrar los botones */
+    display: flex;
+    flex-direction: column;
+    background-color: #ecf7b6;
+    padding: 20px;
+}
+
+.accion {
+    margin-top: 10px;
+    margin-inline: 5px;
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+footer {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+    background-color: #86C754;
+    /* flex para poder centrar los enlaces */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 5px;
+}
+
+/* He dividido el footer en 2 para que salga por un lado los enlaces y debajo el copyright */
+.arriba_footer {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    /* Porcentajes relativos al tamaño del footer */
+    text-align: center;
+}
+
+.copyright {
+    text-align: center;
+}
+
+.copyright p {
+    font-size: small;
+}
