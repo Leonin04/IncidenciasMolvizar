@@ -12,7 +12,7 @@ try {
     $query = "SELECT n.*, l.nombre_lugar, i.ruta_archivo as foto_portada 
               FROM noticias n 
               LEFT JOIN lugares l ON n.id_lugar = l.id 
-              LEFT JOIN imagenes i ON n.id = i.id_noticia AND i.portada = 1
+              LEFT JOIN imagenes i ON n.id = i.id_noticia AND i.es_portada = 1
               ORDER BY n.fecha DESC";
               
     $stmt = $pdo->query($query);

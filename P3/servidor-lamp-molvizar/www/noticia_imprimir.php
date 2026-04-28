@@ -30,10 +30,10 @@ try {
         die("La noticia no existe."); 
     }
 
-    echo $twig->render('noticia.twig', [
+    echo $twig->render('noticia_imprimir.twig', [
         'noticia' => $noticia,
         'imagenes' => $imagenes,
-        'imprimir' => false,
+        'imprimir' => true
     ]);
 
 } catch (PDOException $e) {

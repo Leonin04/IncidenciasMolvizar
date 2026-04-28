@@ -1,5 +1,9 @@
 {% extends "padre.twig" %}
 
+{% block css %}
+    <link rel="stylesheet" href="./assets/css/style.css">
+{% endblock %}
+
 {% block contenido %}
     {% for noticia in noticias %}
         <article class="noticia">

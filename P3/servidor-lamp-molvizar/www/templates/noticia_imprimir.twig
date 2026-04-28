@@ -1,0 +1,42 @@
+{% extends 'padre.twig' %}
+
+{% block css %}
+    <link rel="stylesheet" href="./assets/css/style_noticia_imprimir.css">
+{% endblock %}
+
+{% block contenido %}
+
+    <div class="contenido_noticia">
+            <div class="cabecera_noticia">
+                <h2 class="titulo_noticia">
+                    {{ noticia.titulo }}
+                </h2>
+            </div>
+
+            {% include 'redes.twig' %}
+
+
+            <div class="datos_noticia">
+                <p> 
+                    Publicada el {{ noticia.fecha | date('d/m/Y') }} por {{ noticia.personas }} | {{ noticia.concejalia }} | {{ noticia.nombre_lugar }}
+                </p>
+            </div>
+
+            <div class="cuerpo_noticia">
+                <p>
+                    {{ noticia.descripcion }}
+                </p>
+                {% for imagen in imagenes %}
+                <article>
+                    <img src="{{ imagen.ruta_archivo }}" alt="{{ imagen.descripcion_alt }}">
+                    <h4> {{ imagen.descripcion_alt }}</h4>
+                </article>
+                {% endfor %}
+            </div>
+    </div>
+
+    {% if not imprimir %}
+        {% include 'caja_comentarios.twig' %}
+    {% endif %}
+    
+{% endblock %}
