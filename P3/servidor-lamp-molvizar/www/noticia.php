@@ -26,6 +26,11 @@ try {
     $stmt_img->execute(['id' => $id]);
     $imagenes = $stmt_img->fetchAll(PDO::FETCH_ASSOC);
 
+    $query_comentarios = "SELECT * FROM comentarios WHERE id_noticia = :id ORDER BY fecha DESC";
+    $stmt_com = $pdo->prepare($query_comentarios);
+    $stmt_com->execute(['id' => $id]);
+    $comentarios = $stmt_com->fetchAll(PDO::FETCH_ASSOC);
+
     if (!$noticia) {
         die("La noticia no existe."); 
     }
@@ -33,6 +38,7 @@ try {
     echo $twig->render('noticia.twig', [
         'noticia' => $noticia,
         'imagenes' => $imagenes,
+        'comentarios' => $comentarios,
         'imprimir' => false,
     ]);
 

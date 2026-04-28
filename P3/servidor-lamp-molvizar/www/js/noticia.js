@@ -44,7 +44,7 @@ let formAbierto = false;
 function addComentario(comentario) {
     nuevoArticulo = document.createElement('article');
     nuevoArticulo.classList.add('comentario');
-    
+
     nuevoArticulo.innerHTML = `
         <strong>${comentario.autor}</strong>
         <p class="fecha">${comentario.fecha} - ${comentario.hora}</p>
@@ -88,13 +88,13 @@ comentario.addEventListener('input', () => { //Añadimos un listener a la clase 
         //Esta expresión regular busca de forma aislada el nombre del pueblo, sin importar mayúsculas o minúsculas, para evitar reemplazos parciales dentro de otras palabras. Por ejemplo, si el pueblo es "Almuñécar", no se reemplazará la parte "Almu" dentro de otras palabras.
         //La g de "gi" indica que se reemplazan todas las apariciones, y la i que se ignoran mayusculas o minúsculas.
         const regex = new RegExp(`\\b${pueblo}\\b`, 'gi');
-        
+
         contenido = contenido.replace(regex, pueblo.toUpperCase());
     });
     campoComentario.value = contenido;
 });
 
-formulario.addEventListener('submit', (e) => { 
+formulario.addEventListener('submit', (e) => {
     e.preventDefault();
     // Expresión regular para validar el formato del correo electrónico. El correo debe comenzar por un numero de caracteres alfanuméricos, seguidos de un @, otro número de caracteres alfanuméricos y finalmente una . seguido de entre 2 y 10 caracteres.
     const regexEmail = /^\w+@\w+(\.\w{2,10})+$/;
@@ -117,6 +117,6 @@ formulario.addEventListener('submit', (e) => {
         contenido: contenido
     };
     comentarios.push(nuevoComentario);
-    cargarComentarios();  
+    cargarComentarios();
     formulario.reset(); //Limpiamos el formulario
-} );
+});
