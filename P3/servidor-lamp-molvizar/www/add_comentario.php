@@ -33,6 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt_fecha->execute(['id' => $id_insertado]);
             $fecha_db = $stmt_fecha->fetchColumn();
 
+            $pdo = null;
+
             // Responder con éxito y la fecha
             echo json_encode(['success' => true, 'fecha' => $fecha_db]);
         } catch (PDOException $e) {

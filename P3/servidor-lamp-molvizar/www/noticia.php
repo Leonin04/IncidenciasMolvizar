@@ -37,6 +37,8 @@ try {
     $lugares = $stmt_lugares->fetchAll(PDO::FETCH_COLUMN);
     $lugaresJson = json_encode($lugares, JSON_UNESCAPED_UNICODE);
 
+    $pdo = null;
+
     if (!$noticia) {
         die("La noticia no existe."); 
     }

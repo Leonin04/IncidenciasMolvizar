@@ -26,6 +26,8 @@ try {
     $stmt_img->execute(['id' => $id]);
     $imagenes = $stmt_img->fetchAll(PDO::FETCH_ASSOC);
 
+    $pdo = null;
+
     if (!$noticia) {
         die("La noticia no existe."); 
     }

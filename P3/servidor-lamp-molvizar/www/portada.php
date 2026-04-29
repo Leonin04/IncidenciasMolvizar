@@ -18,6 +18,8 @@ try {
     $stmt = $pdo->query($query);
     $noticias = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+    $pdo = null;
+
     echo $twig->render('portada.twig', [
         'noticias' => $noticias
     ]);
