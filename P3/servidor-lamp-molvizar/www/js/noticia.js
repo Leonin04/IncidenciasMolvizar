@@ -10,12 +10,11 @@ const cerrarForm = document.querySelector('.cerrar_form');
 const submitForm = document.querySelector('.submit');
 const campoComentario = formulario.querySelector('textarea[name="comentario"]');
 
-const localidades = ["Molvizar", "Almuñécar", "Salobreña", "Motril", "Gualchos", "Lobres", "Itrabo", "Calahonda", "Torrenueva"];
-
-
 let dcomentarios = menu.getAttribute('data-comentarios');
-
 let comentarios = JSON.parse(dcomentarios);
+
+let dlocalidades = menu.getAttribute('data-localidades');
+const localidades = JSON.parse(dlocalidades);
 
 let comentariosEscritos = 0;
 

@@ -32,6 +32,11 @@ try {
     $comentarios = $stmt_com->fetchAll(PDO::FETCH_ASSOC);
     $comentariosJson = json_encode($comentarios, JSON_PRETTY_PRINT);
 
+    $query_lugares = "SELECT nombre_lugar FROM lugares";
+    $stmt_lugares = $pdo->query($query_lugares);
+    $lugares = $stmt_lugares->fetchAll(PDO::FETCH_COLUMN);
+    $lugaresJson = json_encode($lugares, JSON_UNESCAPED_UNICODE);
+
     if (!$noticia) {
         die("La noticia no existe."); 
     }
@@ -40,6 +45,7 @@ try {
         'noticia' => $noticia,
         'imagenes' => $imagenes,
         'comentarios' => $comentariosJson,
+        'localidades' => $lugaresJson,
         'imprimir' => false,
     ]);
 
