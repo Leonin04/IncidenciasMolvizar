@@ -30,6 +30,7 @@ try {
     $stmt_com = $pdo->prepare($query_comentarios);
     $stmt_com->execute(['id' => $id]);
     $comentarios = $stmt_com->fetchAll(PDO::FETCH_ASSOC);
+    $comentariosJson = json_encode($comentarios, JSON_PRETTY_PRINT);
 
     if (!$noticia) {
         die("La noticia no existe."); 
@@ -38,7 +39,7 @@ try {
     echo $twig->render('noticia.twig', [
         'noticia' => $noticia,
         'imagenes' => $imagenes,
-        'comentarios' => $comentarios,
+        'comentarios' => $comentariosJson,
         'imprimir' => false,
     ]);
 

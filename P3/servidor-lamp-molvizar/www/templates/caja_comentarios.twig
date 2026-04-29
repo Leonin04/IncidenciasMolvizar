@@ -4,7 +4,7 @@
                 <img src="imgs/iconos/comentarios.png" alt="Icono de comentarios">
             </a>
 
-            <div class="menu_comentarios" data_comentarios="{{ comentarios | json_encode | escape('html_attr') }}"> <!-- Contenedor principal que aparece al desplazarse hacia el boton -->
+            <div class="menu_comentarios" data-comentarios="{{ comentarios|escape('html_attr') }}"> <!-- Contenedor principal que aparece al desplazarse hacia el boton -->
                 <h3 class="titulo_menu">Comentarios</h3>
                 <button class="añadir_comentario" type="button"> Añadir comentario </button>
                 <button class="cerrar_form"> x </button> <!-- X para cerrar el formulario de añadir comentario -->

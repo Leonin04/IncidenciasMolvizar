@@ -12,29 +12,10 @@ const campoComentario = formulario.querySelector('textarea[name="comentario"]');
 
 const localidades = ["Molvizar", "Almuñécar", "Salobreña", "Motril", "Gualchos", "Lobres", "Itrabo", "Calahonda", "Torrenueva"];
 
-let comentarios = [
-    {
-        autor: "Ares",
-        email: "ares@gmail.com",
-        fecha: "05-04-2026",
-        hora: "14:30",
-        contenido: "¡Qué buen artículo! Me sirvió mucho."
-    },
-    {
-        autor: "Javier",
-        email: "javi@gmail.com",
-        fecha: "05-04-2026",
-        hora: "09:15",
-        contenido: "Ha sido un suceso horrible, mis condolencias a las familias afectadas."
-    },
-    {
-        autor: "Lucía",
-        email: "lucia@gmai.com",
-        fecha: "04-04-2026",
-        hora: "18:45",
-        contenido: "No puedo creer que esto haya pasado en nuestro pueblo."
-    }
-];
+
+let dcomentarios = menu.getAttribute('data-comentarios');
+
+let comentarios = JSON.parse(dcomentarios);
 
 let comentariosEscritos = 0;
 
@@ -46,9 +27,9 @@ function addComentario(comentario) {
     nuevoArticulo.classList.add('comentario');
 
     nuevoArticulo.innerHTML = `
-        <strong>${comentario.autor}</strong>
-        <p class="fecha">${comentario.fecha} - ${comentario.hora}</p>
-        <p>${comentario.contenido}</p>
+        <strong>${comentario.nombre}</strong>
+        <p class="fecha">${comentario.fecha}</p>
+        <p>${comentario.texto}</p>
     `;
     seccion.appendChild(nuevoArticulo);
 }
@@ -108,15 +89,41 @@ formulario.addEventListener('submit', (e) => {
         alert('Por favor, introduce un correo electrónico válido. Ejemplo: usuario@dominio.com');
         return;
     }
-    let fecha = new Date();
-    let nuevoComentario = {
-        autor: autor,
-        fecha: `${fecha.getDate()}-${fecha.getMonth() + 1}-${fecha.getFullYear()}`,
-        email: email,
-        hora: `${fecha.getHours()}:${fecha.getMinutes().toString().padStart(2, '0')}`,
-        contenido: contenido
-    };
-    comentarios.push(nuevoComentario);
-    cargarComentarios();
-    formulario.reset(); //Limpiamos el formulario
+    //Extraer el id de la noticia actual 
+    const contenidoNoticia = document.querySelector('.contenido_noticia');
+    const idNoticia = contenidoNoticia.getAttribute('data-noticia');
+
+    // Preparar los datos a enviar mediante POST
+    let formData = new FormData();
+    formData.append('id_noticia', idNoticia);
+    formData.append('nombre', autor);
+    formData.append('email', email);
+    formData.append('texto', contenido);
+
+    // Enviar al servidor
+    fetch('add_comentario.php', {
+        method: 'POST',
+        body: formData
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Si todo ha ido bien, añadimos el comentario al array y recargamos
+                let nuevoComentario = {
+                    nombre: autor,
+                    fecha: data.fecha, // La fecha devuelta por la base de datos
+                    email: email,
+                    texto: contenido
+                };
+                comentarios.push(nuevoComentario);
+                cargarComentarios();
+                formulario.reset(); //Limpiamos el formulario
+            } else {
+                alert('Error al guardar el comentario: ' + data.error);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error de conexión al enviar el comentario.');
+        });
 });
