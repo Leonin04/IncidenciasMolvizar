@@ -1,0 +1,27 @@
+<!-- Creamos la zona para la caja de comentarios -->
+        <div class="caja_comentarios">
+            <a class="boton_comentarios">  <!-- He hecho un boton visual para indicar que se puede abrir la caja de comentarios -->
+                <img src="imgs/iconos/comentarios.png" alt="Icono de comentarios">
+            </a>
+
+            <div class="menu_comentarios" data-comentarios="{{ comentarios|escape('html_attr') }}" data-localidades="{{ localidades|escape('html_attr') }}"> <!-- Contenedor principal que aparece al desplazarse hacia el boton -->
+                <h3 class="titulo_menu">Comentarios</h3>
+                <button class="añadir_comentario" type="button"> Añadir comentario </button>
+                <button class="cerrar_form"> x </button> <!-- X para cerrar el formulario de añadir comentario -->
+
+                <form class="form_comentarios"> <!-- Formulario para añadir un comentario, inicialmente oculto, que se muestra al hacer click en el boton de añadir comentario -->
+                    <label for="Nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="Email">Email:</label>
+                    <input type="text" id="email" name="email" required>
+
+                    <label for="Comentario">Comentario:</label>
+                    <textarea id="comentario" name="comentario" required></textarea>
+
+                    <button type="submit">Enviar</button>
+                </form>
+                <div class="seccion_comentarios"> <!-- Franja invisible para los comentarios -->
+                </div>
+            </div>
+        </div>

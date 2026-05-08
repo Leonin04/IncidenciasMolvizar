@@ -1,0 +1,18 @@
+{% extends "padre.twig" %}
+
+{% block css %}
+    <link rel="stylesheet" href="./assets/css/style.css">
+{% endblock %}
+
+{% block contenido %}
+    {% for noticia in noticias %}
+        <article class="noticia">
+            <h2 class="titulo noticia">{{ noticia.titulo }}</h2>
+            <img src="{{ noticia.foto_portada }}" alt="{{ noticia.titulo }}">           
+            <a class="boton_leer" href="noticia.php?id={{ noticia.id }}">Leer más</a>
+        </article>
+    {% else %}
+        {# Si entra aquí, es que el array 'noticias' está vacío #}
+        <p>No se han encontrado noticias en la base de datos.</p>
+    {% endfor %}
+{% endblock %}

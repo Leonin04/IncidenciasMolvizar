@@ -3,13 +3,13 @@ require_once 'database.php';
 
 header('Content-Type: application/json');
 
-// Comprobar que es una petición POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Recoger y limpiar los datos
     $id_noticia = isset($_POST['id_noticia']) ? (int)$_POST['id_noticia'] : 0;
-    $nombre = isset($_POST['nombre']) ? trim($_POST['nombre']) : '';
-    $email = isset($_POST['email']) ? trim($_POST['email']) : '';
-    $texto = isset($_POST['texto']) ? trim($_POST['texto']) : '';
+    $nombre = isset($_POST['nombre']) ? htmlspecialchars(trim($_POST['nombre'])) : '';
+    $email = isset($_POST['email']) ? filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL) : '';
+    $texto = isset($_POST['texto']) ? htmlspecialchars(trim($_POST['texto'])) : '';
+
 
     // Validar datos básicos
     if ($id_noticia > 0 && !empty($nombre) && !empty($email) && !empty($texto)) {

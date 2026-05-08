@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="imgs/logo.png"> <!-- Para que salga iconito en la pestaña del navegador -->
+    <title>Incidencias ayuntamiento de Molvízar</title> <!-- Para que salga el titulo en la pestaña del navegador -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Para que sea webresponsive -->
+    {% block css %}
+    {% endblock %}
+</head>
+
+<body>
+
+    {% include 'header.twig' %}
+
+    {% include 'aside.twig' %}
+
+    <div class="contenido">
+        {% block contenido %}
+            {# Aquí irá el contenido de portada.twig o noticia.twig #}
+        {% endblock %}
+    </div>
+
+    {% include 'footer.twig' %}
+
+</body>
+</html>

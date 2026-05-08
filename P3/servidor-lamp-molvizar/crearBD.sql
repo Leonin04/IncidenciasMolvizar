@@ -70,7 +70,11 @@ INSERT INTO noticias (titulo, fecha, tipo, concejalia, personas, descripcion, id
 -- Noticia 1: Galería completa (> 4 imágenes) para cumplir el punto 8 de la práctica
 INSERT INTO imagenes (id_noticia, ruta_archivo, descripcion_alt, es_portada) VALUES 
 (1, 'imgs/articulos/iglesia_frontal.jpg', 'Vista frontal de la Iglesia de Santa Ana', TRUE),
-(1, 'imgs/articulos/iglesia_detalle.jpg', 'Detalle de la piedra restaurada', FALSE);
+(1, 'imgs/articulos/iglesia_detalle.jpg', 'Detalle de la piedra restaurada', FALSE),
+(1, 'imgs/articulos/iglesia_andamio.png', 'Fachada de la iglesia con andamios de restauración', FALSE),
+(1, 'imgs/articulos/iglesia_detalle_piedra.png', 'Obrero limpiando la piedra de la fachada', FALSE),
+(1, 'imgs/articulos/iglesia_campanario.png', 'Restauración del campanario de la iglesia', FALSE),
+(1, 'imgs/articulos/iglesia_interior.png', 'Trabajos de restauración en el interior de la iglesia', FALSE);
 
 -- Imágenes para el resto de noticias
 INSERT INTO imagenes (id_noticia, ruta_archivo, descripcion_alt, es_portada) VALUES 
